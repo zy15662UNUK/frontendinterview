@@ -450,3 +450,5 @@ important 用于单独指定某条样式中的单个属性。对于被指定的�
 - 水平居中靠text-align
 - 垂直居中靠 top: 50%; + transform: translateY(-50%);
 - https://jsfiddle.net/zy15662/s1v8cjeu/54/
+### css画直角三角形和正三角形
+- https://jsfiddle.net/e1jwd8zs/5/
