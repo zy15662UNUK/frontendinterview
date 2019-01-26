@@ -1,3 +1,10 @@
+### html 的 meta标签的属性和作用
+- https://segmentfault.com/a/1190000004279791
+
+### http/https/http2 是什么？他们有什么区别。
+- https://juejin.im/post/5a77fe396fb9a063317c2e71
+- https://www.jianshu.com/p/551d05b0cbee
+
 ### 对html语义化有什么了解吗？有那些语义化的新标签？
 当时就答了一些语义化的标签。总结一下：
 语义化标签即标签本身的内容就能表示这个元素的意义给浏览者或者开发者。比如<div>和<span>就是没有语义的元素。而<form>表示一个表单或者<table>表示表格就是语义化的标签。
