@@ -4,6 +4,7 @@
   + 在package.json中plugin中加上import ant mobile的css的内容。这样就会自动引入它css内容。
   + 在package.json中plugin中加上babel-plugin-transform-decorators-legacy。支持@来表示装饰器的方法
   + 在package.json中scripts中加上同时使用nodemon和babel-node启动server的语句`"server": "set NODE_ENV=test&&nodemon --exec babel-node -- ./server/server.js"`
+  + 因为前端运行在3000端口上, 后端运行在9093端口上。所以需要在package.json中加上"proxy": "http://localhost:9093" 来配置。目的是将所有请求转到9093这个端口
   + 在package.json中调整eslint的提示范围
 
 - redux中有哪些state
