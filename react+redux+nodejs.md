@@ -99,6 +99,17 @@ const model = {
     }
 };
 ```
+
+##### 后端设置了哪些API?
+- get:
+  + 查询全部的用户
+  + 查询用户聊天信息
+  + 验证登陆
+- post:
+  + 登陆
+  + 注册
+  + 注册登录后附加完善个人信息
+  + 标记已读信息
 ##### 2-1 搭建react环境
 - `npm run eject` 弹出配置文件，允许自定义配置。如果命令不好使。那么执行`git add .` `git comm``it -am "Save before ejecting"`
 
