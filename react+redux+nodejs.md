@@ -108,8 +108,8 @@ const model = {
 - post:
   + 登陆
   + 注册
-  + 注册登录后附加完善个人信息
-  + 标记已读信息
+  + 注册登录后附加完善个人信息。`findOneAndUpdate`来更新用户信息。然后使用object.assign来拼成更新后的信息传给前端。
+  + 标记已读信息。首先读出前端发来的发出人信息。从cookies中找到当前用户的信息。然后将数据库中所有的从该发出人发给当前用户信息的read字段都改为true。然后把修改的数据条数返回给前端
 ##### 2-1 搭建react环境
 - `npm run eject` 弹出配置文件，允许自定义配置。如果命令不好使。那么执行`git add .` `git comm``it -am "Save before ejecting"`
 
