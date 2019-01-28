@@ -14,6 +14,21 @@
 
 - 路由是如何设置的？
   + 所有的路由控制都在最上层的index.js这一层。不过为了后端ssr时候的代码复用。所有的<Route/>路由有关的组件都被抽离到一个专门的App.js组件中了
+    
+    ```
+    <div>
+        <AuthRouter/>
+        <Switch>
+            <Route path="/login" component={Login}></Route>
+            <Route path="/register" component={Register}></Route>
+            <Route path="/bossinfo" component={BossInfo}></Route>
+            <Route path="/geniusinfo" component={GeniusInfo}></Route>
+            <Route path="/chat/:user" component={Chat}></Route>
+            <Route component={Dashboard}></Route>
+        </Switch>
+    </div>
+    ```
+    
   + 用<Switch>套住所有的路由 /login /register /bossinfo /geniusinfo /chat/:uer 分别有专门的路由导向对应的组件。最后再放置一个接受所有剩余路由的导向dashboard的组件
   + 和<Switch>平行的还有一个验证登陆的普通组件(被withRouter装饰器装饰)。在componentDidMount时候向后端发送请求验证用户的登录状态。如果已经登陆了则向redux中填充用户信息，如果没有则用`this.props.history.push('/login')`
   + Dashboard组件中还有一层路由。用于导向/boss /genius /me /message 这几个组件。根据当前用户输入的路由来选择组件.由于index.js这个组件的设置。用户输入上述这些的任意一个之后都会被送到Dashboard这个组件中来。由于Dashboard被withRouter装饰过了，所以可以获取当前用户输入的路由。根据用户输入的路由来渲染出和输入匹配的<Route/>组件
