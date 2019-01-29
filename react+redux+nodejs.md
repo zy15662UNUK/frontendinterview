@@ -15,9 +15,13 @@
     - loadData: 用于AuthRouter中验证cookies的。如果cookie存在则将用户信息添加到redux中。否则跳转到登陆页面
     - update: 用于更新附加信息
     - logout: 退出登陆清空redux中user数据
-    
   + chatuser: 聊天列表相关的
-  + chat: 聊天信息相关的
+    - getUserList：获取boss列表或者牛人列表并添加到redux中
+  + chat: 聊天信息相关的 {chatmsg: [], users: {}, unread: 0}
+    - sendMsg： 发送信息时触发的事件。调用socket
+    - receiveMsg：当后端发出receiveMsg时候触发的事件。将redux中的聊天信息列表更新(加上这条新的)。然后将未读信息条数+1
+    - getMsgList: 更新当前用户的信息列表和维度信息条数
+    - readMsg：当用户打开对话框之后调用更新未读消息数目和消息列表中的已读属性为true
   + 用redux中的combineReducers合并
 
 - 路由是如何设置的？
