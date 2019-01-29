@@ -9,6 +9,13 @@
 
 - redux中有哪些state
   + user: 用户信息相关的
+    - errMsg
+    - register
+    - login
+    - loadData: 用于AuthRouter中验证cookies的。如果cookie存在则将用户信息添加到redux中。否则跳转到登陆页面
+    - update: 用于更新附加信息
+    - logout: 退出登陆清空redux中user数据
+    
   + chatuser: 聊天列表相关的
   + chat: 聊天信息相关的
   + 用redux中的combineReducers合并
