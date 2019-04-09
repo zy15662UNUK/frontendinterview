@@ -1,4 +1,5 @@
 ##### Around项目
+- Geobased social network app. User can upload image or video and check neighbors' post on map. Basically this app is backended by google map API and Node js/express/mongodb. JSON web token for the login validation
 - token: 不需要发user信息。只用发token就可以确认user信息。存在localStorage。放在cookie中的话那么发送请求时候都会带上cookie
 - 综述 `npm install -g create-react-app`
 1. single page web app, which contains login log out register and main pages网页总体分成注册，登陆，内容页面，。通过react-router进行路由管理跳转。内容页面又分成图片，视频，地图三个tab。同时顶上还有一个选择框选择是展示附近的图片还是所有图片中的人脸图片。前后端通过fetch发送ajax请求。注册/登陆表单，图片轮播图等功能是直接使用ant-design中的相应功能。显示发布位置的地图使用Google map API，因为google map API 是需要使用纯javascript调用的，所以为了方便项目中直接使用封装好react-google-map库实现。组件间的通信全部是靠props传递值(父-子)和回调函数(子-父)
@@ -25,6 +26,8 @@
   - 上述问题的解决方案 https://www.thinktxt.com/react/2017/02/26/react-router-browserHistory-refresh-404-solution.html
 
 ##### NBA web项目
+- pure frontend project, backended by nba-stats api. request data from the api and demonstarte it with D3.js. User can filter the data by its value and switch between hexbin and scatter graph. Switch data source to diff player through a autocomplete search box
+
 - 使用D3 react 还有 ant design 实现的一个展示NBA球员得分情况的一个单页应用
 
 - 可视化部分下方有拖拽bar。拖拽bar是用来设定图中显示点的最小频率。toolTip选择开关是用来开启或者关闭提示气球的。开启时鼠标选中点会有气球出现展示这个点的数据。图标类型radio选择是用来选择点的类型(Hexbin/Scatter)
@@ -52,6 +55,13 @@
 - SearchBar: 接受从main传下来的loadPlayerInfo函数。当用户完成选择后在回调中调用这个函数。 当用户输入的时候根据输入内容向后端发送请求。将请求结果渲染成输入框下方的提示列表
 
 ##### React 题目
+- 比较Vue和React https://juejin.im/post/5b8b56e3f265da434c1f5f76#heading-4
+  + Vue是类似于HTML模板而React是JSX语法
+  + 数据流 Vue单向绑定v-bind 双向绑定是v-model和data中内容 React是单向数据流 通过setState的方式改变state的数值
+  + 组件通信 Vue: props和子组件发送event eventBus vuex React: props传给子。callback函数作为props传给子函数用来收集子函数传来的信息
+  + Redux 使用的是不可变数据，而Vuex的数据是可变的。Redux每次都是用新的state替换旧的state，而Vuex是直接修改
+  + Redux 在检测数据变化的时候，是通过 diff 的方式比较差异的，而Vuex其实和Vue的原理一样，是通过 getter/setter来比较的（如果看Vuex源码会知道，其实他内部直接创建一个Vue实例用来跟踪数据变化）
+  
 - setState: https://jsfiddle.net/8r1gpcv7/107/
   1. setState是一个异步的操作。setState之后并不一定马上改变了state。比如执行三次this.setState({cnt: this.state.cnt += 1})。最终依旧只是+1。因为前两次并没有被执行。this.state.cnt依旧是0
   2. setState也可以传入一个function。但是这里的改变就是base on previous state.也就是前一个setState中的function改变后的结果会被以prevState形式传给下一个. 但是注意，每一个函数之后真实的state也是没有改变的，只有当onClick2被调用时候才会被改变. 最终会一次性+3

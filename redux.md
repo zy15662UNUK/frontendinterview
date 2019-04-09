@@ -13,6 +13,8 @@ render(
   document.getElementById('root')
 );
 ```
+  - reducer: 接受state和action。根据action的type和payload来创建新的state
+  - actionCreator：返回一个action给reducer。或者对于异步操作dispatch一个action. 在thunk这个中间件的帮助下
 ##### 简易版的redux
 - 迷你版。仅实现三个基本的API: getState, dispatch, subscribe
 - 简单的发布订阅模式

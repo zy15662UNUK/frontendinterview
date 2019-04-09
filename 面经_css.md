@@ -101,7 +101,7 @@ https://www.cnblogs.com/leolai/archive/2012/09/18/2690838.html
 
 #### JS 如何设置获取盒模型的宽高
 - dom.style.width/height。 这种只能获取内联样式的宽高。写在style标签或者css中取不到
-- dom.currentStyle.width/heig 获取真实渲染的高度，缺点是只有IE支持
+- dom.currentStyle.width/heigt 获取真实渲染的高度，缺点是只有IE支持
 - window.getComputedStyle(dom).width/height 同上
 - dom.getBoundingClientRect().width/height 经常用于计算元素绝对位置。相较视窗左顶点。拿到left top
 #### 实例题。根据盒模型解释边距重叠
